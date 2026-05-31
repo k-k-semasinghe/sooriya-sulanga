@@ -14,6 +14,9 @@ import galleryFive from '../images/gallery5.PNG'
 import gallerySix from '../images/gallery6.PNG'
 import gallerySeven from '../images/gallery7.PNG'
 import galleryEight from '../images/gallery8.PNG'
+import producerChammika from '../images/producers and director/Chammika De Silva(producer).png'
+import producerManisha from '../images/producers and director/Manisha De Silva(producer).png'
+import directorPriyantha from '../images/producers and director/Priyantha Colombage(director & producer).jpg'
 
 const actors = [
   { name: 'Lead Actor 1', role: 'Main character', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80&auto=format&fit=crop' },
@@ -31,13 +34,6 @@ const gallery = [
   gallerySix,
   gallerySeven,
   galleryEight,
-]
-
-const crew = [
-  { label: 'Director', value: 'Add IMDb director here' },
-  { label: 'Cinematography', value: 'Add camera director here' },
-  { label: 'Editing', value: 'Add editor here' },
-  { label: 'Music', value: 'Add composer here' },
 ]
 
 export default function Page(){
@@ -77,20 +73,26 @@ export default function Page(){
           </div>
 
           <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6">
-            <h2 className="text-2xl font-bold">Overview / දළ විශ්ලේෂණය</h2>
-            <p className="mt-4 text-gray-300">A compact one-page portfolio for Sooriya Sulanga. This section is ready for the short synopsis and key film details pulled from IMDb once you share them or the page becomes accessible.</p>
-            <p className="mt-4 text-gray-300">මෙය Sooriya Sulanga සඳහා සරල එක් පිටු portfolio එකක්. IMDb වලින් ලැබෙන කෙටි විස්තරය සහ film details මෙතනට පහසුවෙන් දාන්න පුළුවන්.</p>
+            <h2 className="text-2xl font-bold">Story / කතාව</h2>
+            <p className="mt-4 leading-7 text-gray-300">
+              කොළඹ පෞද්ගලික බැංකුවක විධායක නිලධාරියෙකු වන සිෙත්, තම විවාහයට පෙර මිතුරන් සමඟ පැවැත්වූ සාදයකින් පසු අහම්බෙන් හමු වූ රෝගී තරුණියක් වන රෝධාට එක් රැයක් සඳහා නවාතැන් ලබා දෙයි. නමුත් පසුව ඇය බෝම්බ ප්‍රහාරයකට සම්බන්ධ සැකකාරියක් ලෙස හඳුනාගැනීමත් සමඟ සිෙත් අත්අඩංගුවට පත්වේ.
+            </p>
+            <p className="mt-4 leading-7 text-gray-300">
+              මෙම සිදුවීම නිසා ඔහුගේ රැකියාව, විවාහය සහ පවුල් ජීවිතය බිඳ වැටෙන අතර, ඔහුගේ පියාද මිය යයි. සියල්ල අහිමි වූ සිෙත්, රෝධා පිළිබඳ සැඟවුණු සත්‍යය සොයා යමින්, ඇය පිටුපස තිබූ විශාල රහසක් හෙළිකර ගැනීමට උත්සාහ කරයි.
+            </p>
+            <p className="mt-4 leading-7 text-gray-300">
+              අවසානයේ සිෙත් තම නිර්දෝෂීභාවය ඔප්පු කරගත හැකිද, තරුශි සමඟ නැවත එක්විය හැකිද, සහ රෝධාගේ සැබෑ කතාව කුමක්ද යන්න මෙම කතාවේ ප්‍රධාන අභිරහස් වේ.
+            </p>
             <ul className="mt-4 space-y-1 text-sm text-gray-400">
               <li><strong>Year:</strong> 2024</li>
               <li><strong>Runtime:</strong> 120 min</li>
-              <li><strong>Genre:</strong> Drama</li>
-              <li><strong>Status:</strong> Portfolio layout ready for cast and crew updates</li>
+              <li><strong>Genre:</strong> Drama / Thriller</li>
             </ul>
           </div>
 
           <div className="md:col-span-2 rounded-[2rem] border border-white/10 bg-white/5 p-6">
-            <h3 className="text-xl font-semibold">Rating Window</h3>
-            <p className="mt-2 text-sm text-gray-400">Visitors can rate the film and leave a comment. MongoDB can be added later if you want persistence across devices.</p>
+            <h3 className="text-xl font-semibold">Ratings &amp; Reviews</h3>
+            <p className="mt-2 text-sm text-gray-400">Rate the film, leave a comment, and see what others think.</p>
             <div className="mt-4">
               <Ratings />
             </div>
@@ -121,21 +123,50 @@ export default function Page(){
       </section>
 
       <section className="container py-10">
-        <div className="grid gap-6 rounded-[2rem] border border-white/10 bg-white/5 p-6 md:grid-cols-[1.1fr_0.9fr]">
+        <div className="flex items-end justify-between gap-4">
           <div>
-            <h2 className="text-2xl font-bold">Director and Camera Crew</h2>
-            <p className="mt-3 text-gray-300">The production crew section is ready for the director and camera team once you have the IMDb credits or poster credits.</p>
-            <p className="mt-3 text-gray-400">Use this block to show the creative leadership behind the film in a clean, easy-to-scan format.</p>
+            <h2 className="text-2xl font-bold">Producers &amp; Director</h2>
+            <p className="mt-2 text-sm text-gray-400">The creative leadership behind Sooriya Sulanga.</p>
           </div>
+          <p className="text-xs uppercase tracking-[0.25em] text-yellow-300/80">Team</p>
+        </div>
 
-          <div className="grid gap-3">
-            {crew.map((member) => (
-              <div key={member.label} className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/20 px-4 py-3">
-                <span className="text-sm uppercase tracking-[0.25em] text-gray-500">{member.label}</span>
-                <span className="text-sm font-medium text-white">{member.value}</span>
-              </div>
-            ))}
-          </div>
+        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <article className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5">
+            <Image
+              src={directorPriyantha}
+              alt="Priyantha Colombage"
+              className="aspect-[4/5] w-full object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-semibold text-white">Priyantha Colombage</h3>
+              <p className="text-sm text-yellow-300/80">Director &amp; Producer</p>
+            </div>
+          </article>
+
+          <article className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5">
+            <Image
+              src={producerChammika}
+              alt="Chammika De Silva"
+              className="aspect-[4/5] w-full object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-semibold text-white">Chammika De Silva</h3>
+              <p className="text-sm text-yellow-300/80">Producer</p>
+            </div>
+          </article>
+
+          <article className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/5">
+            <Image
+              src={producerManisha}
+              alt="Manisha De Silva"
+              className="aspect-[4/5] w-full object-cover"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-semibold text-white">Manisha De Silva</h3>
+              <p className="text-sm text-yellow-300/80">Producer</p>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -199,6 +230,147 @@ export default function Page(){
               </span>
             </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container py-10">
+        <h2 className="text-2xl font-bold">Cast &amp; Crew / රංගන හා තාක්ෂණික කණ්ඩායම</h2>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">Executive Producers</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Chathura Ranwala</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">Produced by</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Manisha De Silva</li>
+              <li>Chammika De Silva</li>
+              <li>Priyantha Colombage</li>
+              <li>Ranjith Kapukeara</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">Director</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Priyantha Colombage</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">Screenplay</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Priyantha Colombage</li>
+              <li>Ranjith Kapukeara</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">Music</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Indunuwan Karunathilaka</li>
+              <li>Kalpana Mihidukula</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">Singers</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Samitha Mudunkotuwa</li>
+              <li>Nadeera Niyathapala</li>
+              <li>Dhanith Sri</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">Lyrics</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Priyantha Colombage</li>
+              <li>Ranjith Kapukeara</li>
+              <li>Saman Edirimuni</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">Cinematography</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Thusitha Gunawardhana</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">Editing</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Nadeera Niyathapala</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">VFX</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Dhanushka De Silva</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">Drone Photography</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Gayan Lakshitha</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">Dance Choreography</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Harsha Deshapriya</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">Color Grading</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Yapa Gunawardhana</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">Weapon Instructor</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Nuwan Abeykoon</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">Art Director</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Thusitha Gunawardhana</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">Makeup</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Manjula De Silva</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">Costume Design</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Nadee Kavidya</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300/80">Production Manager</h3>
+            <ul className="mt-4 space-y-1 text-sm text-gray-300">
+              <li>Ranjith Kapukeara</li>
+            </ul>
           </div>
         </div>
       </section>
